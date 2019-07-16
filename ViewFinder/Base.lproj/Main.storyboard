@@ -48,47 +48,63 @@
         <!--Add New Photo-->
         <scene sceneID="c9I-Da-B9K">
             <objects>
-                <viewController id="VdJ-By-6d6" sceneMemberID="viewController">
+                <viewController id="VdJ-By-6d6" customClass="AddPhotoViewController" customModule="ViewFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FDc-KO-GIc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqf-GR-nSX">
-                                <rect key="frame" x="178" y="236" width="88" height="30"/>
+                                <rect key="frame" x="178" y="144" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="PhotoLibrary"/>
+                                <connections>
+                                    <action selector="AccessLibrary:" destination="VdJ-By-6d6" eventType="touchUpInside" id="BQD-hu-3xf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AW-Rv-hui">
                                 <rect key="frame" x="328" y="144" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Albums"/>
+                                <connections>
+                                    <action selector="AccessAlbums:" destination="VdJ-By-6d6" eventType="touchUpInside" id="1yP-nB-y2a"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlaceHolderImage" translatesAutoresizingMaskIntoConstraints="NO" id="Gqq-3Z-eRe">
-                                <rect key="frame" x="102" y="304" width="240" height="128"/>
+                                <rect key="frame" x="102" y="202" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCj-sL-0Vc">
-                                <rect key="frame" x="102" y="492" width="240" height="30"/>
+                                <rect key="frame" x="96" y="375" width="240" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APt-Ew-l02">
-                                <rect key="frame" x="302" y="576" width="34" height="30"/>
+                                <rect key="frame" x="302" y="449" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="VdJ-By-6d6" eventType="touchUpInside" id="L0S-de-tZi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jU8-bm-eOX">
-                                <rect key="frame" x="73" y="144" width="54" height="30"/>
+                                <rect key="frame" x="72" y="-168" width="54" height="653"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="takeSelfie:" destination="VdJ-By-6d6" eventType="touchUpInside" id="sX1-UJ-zsH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Hxy-pS-MV2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Photo" id="e2K-6G-ltD"/>
+                    <connections>
+                        <outlet property="newImage" destination="Gqq-3Z-eRe" id="unQ-sK-DxO"/>
+                        <outlet property="newText" destination="HCj-sL-0Vc" id="14r-yt-Jq3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glV-gf-Q1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
